@@ -1,0 +1,648 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="yogahub Online Studio — hundreds of pre-recorded yoga, pilates and barre classes, available anywhere, anytime. Try free for 7 days.">
+<meta name="keywords" content="yogahub online studio, online yoga, online pilates, online barre, pre-recorded classes, yogahub Ireland">
+<meta name="robots" content="index, follow">
+<title>yogahub Online Studio — Try Free for 7 Days</title>
+<link rel="icon" href="https://assets.cdn.filesafe.space/HLCTc8QkHltQ3ScL9MN1/media/66ab908ee3331573f0a252a3.png">
+<link rel="canonical" href="https://join.yogahubonlinestudio.com/start">
+<meta property="og:title" content="yogahub Online Studio — Try Free for 7 Days">
+<meta property="og:description" content="Hundreds of pre-recorded yoga, pilates and barre classes. Anywhere, anytime. Start your 7-day free trial today.">
+<meta property="og:image" content="https://assets.cdn.filesafe.space/HLCTc8QkHltQ3ScL9MN1/media/69b54939eba487e57b4393e2.jpg">
+<meta property="og:url" content="https://join.yogahubonlinestudio.com/start">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="yogahub">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --white:#FFFFFF;--cream:#EFE9EE;--blush:#CEC3C6;--dusty-rose:#D8C4C4;--mauve:#BDB2BD;
+  --line:rgba(189,178,189,0.3);--text:#333333;--muted:#666666;--text-muted:#888888;--border:#F2F2F2;
+  --sans:'Quicksand',sans-serif;--r:22px;--r-sm:10px;--r-btn:25px;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;overflow-x:hidden}
+body{font-family:var(--sans);background:var(--white);color:var(--text);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img{max-width:100%;display:block}a{text-decoration:none;color:inherit}
+button{font-family:var(--sans);cursor:pointer;border:none;background:none}
+.wrap{max-width:1200px;margin:0 auto;padding:0 2rem}
+.wrap-md{max-width:800px;margin:0 auto;padding:0 2rem}
+a:focus-visible,button:focus-visible{outline:2px solid var(--dusty-rose);outline-offset:2px}
+
+/* NAV */
+nav{position:fixed;top:1rem;left:50%;transform:translateX(-50%);width:calc(100% - 2.5rem);max-width:1160px;z-index:900;display:flex;align-items:center;justify-content:space-between;padding:0 1.25rem 0 1rem;height:56px;background:rgba(255,255,255,0.92);border:1px solid rgba(189,178,189,0.3);border-radius:50px;backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);transition:box-shadow 0.3s,background 0.3s}
+nav.scrolled{background:rgba(255,255,255,0.96);box-shadow:0 4px 28px rgba(0,0,0,0.07)}
+.nav-logo img{height:20px;display:block}
+.nav-links{list-style:none;display:flex;align-items:center;gap:1.5rem}
+.nav-links a{font-size:0.72rem;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;color:var(--muted);transition:color 0.2s}
+.nav-links a:hover{color:var(--text)}
+.nav-btn{font-size:0.72rem;font-weight:600;letter-spacing:0.05em;text-transform:uppercase;background:var(--dusty-rose);color:var(--white);padding:0.5rem 1.2rem;border-radius:var(--r-btn);border:none;transition:transform 0.2s,box-shadow 0.2s;box-shadow:0 2px 8px rgba(0,0,0,0.08)}
+.nav-btn:hover{transform:translateY(-1px);box-shadow:0 4px 12px rgba(0,0,0,0.12)}
+.nav-btn:active{transform:scale(0.97)}
+.nav-signin{font-size:0.72rem;font-weight:600;letter-spacing:0.05em;text-transform:uppercase;color:var(--muted);border:1px solid var(--blush);border-radius:var(--r-btn);padding:0.4rem 0.9rem;transition:color 0.2s,border-color 0.2s}
+.nav-signin:hover{color:var(--text);border-color:var(--mauve)}
+.nav-burger{display:none;flex-direction:column;gap:5px;padding:6px;cursor:pointer}
+.nav-burger span{display:block;width:20px;height:1.5px;background:var(--muted);border-radius:2px}
+
+/* MOBILE NAV */
+.mob-nav{display:none;position:fixed;inset:0;z-index:850;background:var(--white);padding:5.5rem 2rem 2.5rem;flex-direction:column}
+.mob-nav.open{display:flex}
+.mob-nav-close{position:absolute;top:1.1rem;right:1.5rem;font-size:1.5rem;color:var(--muted);cursor:pointer;background:none;border:none}
+.mob-nav a{font-size:1.2rem;font-weight:600;color:var(--text);border-bottom:1px solid var(--line);padding:0.85rem 0;display:block}
+.mob-cta{margin-top:1.75rem;background:var(--dusty-rose);color:var(--white) !important;text-align:center;border-radius:var(--r-btn);padding:0.9rem;font-size:0.85rem;font-weight:600;letter-spacing:0.05em;text-transform:uppercase;border:none;border-bottom:none !important}
+
+/* BUTTONS */
+.btn-primary{display:inline-flex;align-items:center;justify-content:center;font-family:var(--sans);font-size:0.85rem;font-weight:600;letter-spacing:0.03em;text-transform:uppercase;background:var(--dusty-rose);color:var(--white);padding:0.9rem 1.9rem;border-radius:var(--r-btn);transition:transform 0.22s,box-shadow 0.22s;cursor:pointer;border:none;box-shadow:0 4px 8px rgba(0,0,0,0.12)}
+.btn-primary:hover{transform:translateY(-1px);box-shadow:0 6px 16px rgba(0,0,0,0.15)}
+.btn-primary:active{transform:scale(0.97)}
+.btn-outline{display:inline-flex;align-items:center;justify-content:center;font-family:var(--sans);font-size:0.85rem;font-weight:600;letter-spacing:0.03em;text-transform:uppercase;background:transparent;color:var(--text);padding:0.9rem 1.9rem;border-radius:var(--r-btn);border:2px solid var(--dusty-rose);transition:border-color 0.22s,background 0.22s;cursor:pointer}
+.btn-outline:hover{border-color:var(--blush);background:rgba(216,196,196,0.08)}
+.btn-outline:active{transform:scale(0.97)}
+.btn-ghost{display:inline-flex;align-items:center;justify-content:center;font-family:var(--sans);font-size:0.85rem;font-weight:600;letter-spacing:0.03em;text-transform:uppercase;background:var(--cream);color:var(--text);padding:0.9rem 1.9rem;border-radius:var(--r-btn);transition:background 0.22s,transform 0.22s;cursor:pointer;border:none}
+.btn-ghost:hover{background:var(--blush)}
+.btn-ghost:active{transform:scale(0.97)}
+
+/* CHIPS */
+.chip{display:inline-flex;align-items:center;font-size:0.6rem;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;padding:0.25rem 0.7rem;border-radius:50px;border:1px solid}
+.chip-soft{color:var(--muted);border-color:var(--blush);background:rgba(255,255,255,0.88)}
+.chip-accent{color:var(--text);border-color:var(--dusty-rose);background:rgba(216,196,196,0.2)}
+
+/* ONLINE ONLY BANNER */
+.online-only-banner{background:var(--cream);border-bottom:1px solid var(--blush);padding:0.7rem 2rem;text-align:center}
+.online-only-banner p{font-size:0.72rem;font-weight:600;letter-spacing:0.05em;color:var(--muted);display:flex;align-items:center;justify-content:center;gap:0.5rem;flex-wrap:wrap}
+.online-only-banner strong{color:var(--text)}
+.oob-icon{width:16px;height:16px;flex-shrink:0;opacity:0.6}
+
+/* HERO */
+.hero{padding:8.5rem 0 5rem;background:linear-gradient(170deg,var(--white) 0%,var(--white) 45%,var(--cream) 100%);position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;top:-120px;right:-180px;width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,var(--cream) 0%,transparent 70%);opacity:0.6;pointer-events:none}
+.hero-inner{display:grid;grid-template-columns:1fr 1fr;gap:3.5rem;align-items:center;position:relative;z-index:1}
+.hero-eyebrow{display:inline-flex;align-items:center;gap:0.55rem;background:var(--cream);border:1px solid var(--blush);border-radius:50px;padding:0.3rem 0.9rem 0.3rem 0.5rem;font-size:0.65rem;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:var(--muted);margin-bottom:1.4rem}
+.hero-dot{width:6px;height:6px;border-radius:50%;background:var(--dusty-rose);flex-shrink:0;animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:0.4}}
+.hero h1{font-size:clamp(2.2rem,4.5vw,2.625rem);font-weight:600;line-height:1.15;color:var(--text);margin-bottom:1.1rem}
+.hero h1 em{font-style:italic;font-weight:400;color:var(--mauve)}
+.hero-sub{font-size:0.97rem;color:var(--muted);line-height:1.7;max-width:440px;margin-bottom:1.5rem}
+.hero-online-note{background:var(--cream);border:1px solid var(--blush);border-radius:var(--r-sm);padding:0.85rem 1.1rem;font-size:0.8rem;color:var(--muted);line-height:1.65;margin-bottom:1.9rem;display:flex;gap:0.65rem;align-items:flex-start}
+.hon-icon{font-size:1rem;flex-shrink:0;margin-top:0.05rem}
+.hero-ctas{display:flex;gap:0.85rem;flex-wrap:wrap;margin-bottom:2.2rem}
+.hero-trust{display:flex;gap:1.5rem;flex-wrap:wrap}
+.hero-trust-item{font-size:0.7rem;font-weight:600;color:var(--muted);display:flex;align-items:center;gap:0.4rem}
+.hero-trust-item::before{content:'✓';width:16px;height:16px;font-size:0.6rem;color:var(--dusty-rose);flex-shrink:0}
+.hero-card{border-radius:var(--r);overflow:hidden;position:relative;aspect-ratio:4/5;box-shadow:0 20px 60px rgba(0,0,0,0.09)}
+.hero-img-overlay{position:absolute;inset:0;background:linear-gradient(180deg,transparent 50%,rgba(255,255,255,0.25) 100%);pointer-events:none}
+.hero-stats-badge{position:absolute;bottom:1.2rem;left:1.2rem;right:1.2rem;background:rgba(255,255,255,0.86);backdrop-filter:blur(14px);border-radius:var(--r-sm);padding:0.9rem 1.1rem;display:flex;align-items:center;border:1px solid rgba(255,255,255,0.7)}
+.hbs{flex:1;text-align:center}
+.hbs-n{font-size:1.3rem;font-weight:600;color:var(--text);line-height:1}
+.hbs-l{font-size:0.6rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);margin-top:0.18rem}
+.hbs-div{width:1px;background:var(--line);align-self:stretch;margin:0 0.2rem}
+
+/* EYEBROW */
+.eyebrow{font-size:0.65rem;font-weight:600;letter-spacing:0.15em;text-transform:uppercase;color:var(--dusty-rose);margin-bottom:0.5rem;display:block}
+
+/* SECTION HEADINGS */
+.sh{margin-bottom:2.5rem}
+.sh h2{font-size:clamp(1.6rem,2.6vw,2.3rem);font-weight:600;color:var(--text);line-height:1.15}
+.sh p{font-size:0.91rem;color:var(--muted);line-height:1.82;margin-top:0.5rem;max-width:540px}
+
+/* HOW IT WORKS */
+.how-section{padding:4.5rem 0;background:var(--white)}
+.steps-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:2.5rem}
+.step-card{background:var(--cream);border-radius:var(--r);border:1px solid var(--blush);padding:2rem;position:relative}
+.step-num{font-size:2.2rem;font-weight:600;color:var(--blush);line-height:1;margin-bottom:1rem;letter-spacing:-0.04em}
+.step-title{font-size:0.95rem;font-weight:600;color:var(--text);margin-bottom:0.5rem}
+.step-desc{font-size:0.82rem;color:var(--muted);line-height:1.7}
+
+/* WHAT'S INCLUDED */
+.included-section{padding:4.5rem 0;background:var(--cream)}
+.included-grid{display:grid;grid-template-columns:1fr 1fr;gap:3.5rem;align-items:center}
+.included-img{border-radius:var(--r);overflow:hidden;aspect-ratio:4/5;position:relative;box-shadow:0 12px 40px rgba(0,0,0,0.09)}
+.included-list{display:flex;flex-direction:column;gap:1rem}
+.inc-item{display:flex;gap:1rem;align-items:flex-start}
+.inc-icon{width:40px;height:40px;border-radius:50%;background:rgba(216,196,196,0.25);border:1px solid var(--dusty-rose);flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:1.1rem}
+.inc-text h3{font-size:0.88rem;font-weight:600;color:var(--text);margin-bottom:0.2rem}
+.inc-text p{font-size:0.79rem;color:var(--muted);line-height:1.65}
+
+/* DISCLAIMER BOX */
+.disclaimer-section{padding:2.5rem 0;background:var(--white)}
+.disclaimer-box{background:var(--cream);border:2px solid var(--blush);border-radius:var(--r);padding:2rem 2.5rem;display:flex;gap:1.5rem;align-items:flex-start}
+.db-icon{font-size:1.6rem;flex-shrink:0;margin-top:0.1rem}
+.db-body h3{font-size:0.95rem;font-weight:600;color:var(--text);margin-bottom:0.4rem}
+.db-body p{font-size:0.83rem;color:var(--muted);line-height:1.8}
+.db-body strong{color:var(--text);font-weight:600}
+
+/* BONUSES */
+.bonus-section{padding:4.5rem 0;background:var(--white)}
+.bonus-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-top:2rem}
+.bonus-card{background:var(--cream);border-radius:var(--r);border:1px solid var(--blush);padding:1.75rem;display:flex;flex-direction:column;gap:0.75rem}
+.bonus-badge{display:inline-flex;align-items:center;gap:0.4rem;font-size:0.58rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--dusty-rose);margin-bottom:0.25rem}
+.bonus-title{font-size:0.92rem;font-weight:600;color:var(--text);line-height:1.3}
+.bonus-desc{font-size:0.79rem;color:var(--muted);line-height:1.65;flex:1}
+.bonus-value{font-size:0.72rem;font-weight:600;color:var(--muted);margin-top:auto;padding-top:0.75rem;border-top:1px solid var(--line)}
+.bonus-value span{color:var(--dusty-rose)}
+
+/* PRICING */
+.pricing-section{background:var(--cream);padding:4.5rem 0}
+.pricing-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem;max-width:680px;margin:0 auto}
+.p-card{background:var(--white);border-radius:var(--r);border:1px solid var(--line);padding:2.5rem;position:relative;display:flex;flex-direction:column;box-shadow:0 2px 12px rgba(0,0,0,0.04)}
+.p-card.featured{border-color:var(--dusty-rose);box-shadow:0 4px 24px rgba(216,196,196,0.35)}
+.p-tier{font-size:0.58rem;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;color:var(--muted);margin-bottom:1rem}
+.p-price{font-size:2.9rem;font-weight:600;letter-spacing:-0.035em;line-height:1;margin-bottom:0.25rem;color:var(--text)}
+.p-per{font-size:0.78rem;color:var(--muted);display:inline}
+.p-note{font-size:0.78rem;color:var(--muted);margin-bottom:0.3rem}
+.p-save{font-size:0.72rem;font-weight:600;font-style:italic;color:var(--dusty-rose);display:inline-block;margin-bottom:1.75rem}
+.p-divider{height:1px;background:var(--line);margin-bottom:1.5rem}
+.p-trial-note{font-size:0.72rem;color:var(--muted);text-align:center;margin-top:0.85rem;line-height:1.6}
+.p-card .btn-primary,.p-card .btn-outline{align-self:stretch}
+.p-features{list-style:none;margin-bottom:1.5rem;display:flex;flex-direction:column;gap:0.55rem}
+.p-features li{font-size:0.79rem;color:var(--muted);display:flex;align-items:flex-start;gap:0.5rem;line-height:1.5}
+.p-features li::before{content:'✓';color:var(--dusty-rose);font-weight:700;flex-shrink:0;margin-top:0.05rem}
+
+/* TRIAL NOTICE */
+.trial-notice{background:rgba(216,196,196,0.12);border:1px solid var(--blush);border-radius:var(--r-sm);padding:1rem 1.5rem;text-align:center;margin-top:1.5rem;max-width:680px;margin-left:auto;margin-right:auto}
+.trial-notice p{font-size:0.78rem;color:var(--muted);line-height:1.7}
+.trial-notice strong{color:var(--text)}
+
+/* TESTIMONIALS */
+.testi-section{padding:4.5rem 0}
+.testi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}
+.testi-card{background:var(--white);border-radius:var(--r);overflow:hidden;border:1px solid var(--line);display:flex;flex-direction:column;box-shadow:0 2px 12px rgba(0,0,0,0.04)}
+.testi-video-wrap{position:relative;height:210px;overflow:hidden;cursor:pointer;border-radius:var(--r) var(--r) 0 0}
+.testi-video-wrap video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;pointer-events:none}
+.testi-vid-fade{position:absolute;inset:0;background:linear-gradient(180deg,transparent 50%,rgba(255,255,255,0.25) 100%);pointer-events:none}
+.testi-play{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:48px;height:48px;border-radius:50%;background:rgba(255,255,255,0.9);display:flex;align-items:center;justify-content:center;pointer-events:none;transition:transform 0.2s,background 0.2s;box-shadow:0 2px 12px rgba(0,0,0,0.1)}
+.testi-play svg{width:15px;height:15px;fill:var(--text);margin-left:2px}
+.testi-video-wrap:hover .testi-play{transform:translate(-50%,-50%) scale(1.1);background:var(--white)}
+.testi-card.playing .testi-video-wrap{cursor:default}
+.testi-card.playing video{pointer-events:auto}
+.testi-card.playing .testi-play{display:none}
+.testi-body{padding:1.4rem;flex:1}
+.testi-attr{display:flex;align-items:center;gap:0.7rem}
+.testi-avatar{width:32px;height:32px;border-radius:50%;background:var(--cream);border:1px solid var(--blush);flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:0.72rem;font-weight:600;color:var(--muted)}
+.testi-name{font-size:0.78rem;font-weight:600;color:var(--text)}
+.testi-role{font-size:0.68rem;color:var(--muted)}
+
+/* REVIEWS */
+.reviews-section{padding:0 0 3.75rem}
+.reviews-wrap{background:var(--white);border-radius:var(--r);border:1px solid var(--line);padding:1.5rem;overflow:hidden;box-shadow:0 2px 12px rgba(0,0,0,0.04)}
+
+/* FAQ */
+.faq-list{border-radius:var(--r);border:1px solid var(--line);overflow:hidden;background:var(--cream)}
+.faq-q{width:100%;background:none;border:none;border-bottom:1px solid var(--line);text-align:left;display:flex;justify-content:space-between;align-items:center;gap:1.5rem;padding:1.3rem 1.5rem;font-size:0.92rem;font-weight:600;color:var(--text);cursor:pointer;font-family:var(--sans);transition:background 0.2s}
+.faq-q:hover{background:var(--blush)}
+.faq-item:last-child .faq-q{border-bottom:none}
+.faq-item.open .faq-q{border-bottom:1px solid var(--line)}
+.faq-icon{width:26px;height:26px;border:1px solid var(--line);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1rem;font-weight:300;color:var(--muted);flex-shrink:0;transition:background 0.3s,border-color 0.3s,color 0.3s,transform 0.3s;background:var(--white)}
+.faq-item.open .faq-icon{background:var(--dusty-rose);border-color:var(--dusty-rose);color:var(--white);transform:rotate(45deg)}
+.faq-ans{max-height:0;overflow:hidden;transition:max-height 0.4s ease,padding 0.3s;font-size:0.88rem;color:var(--muted);line-height:1.85;background:var(--white);border-bottom:1px solid var(--line);padding:0 1.5rem}
+.faq-item:last-child .faq-ans{border-bottom:none}
+.faq-item.open .faq-ans{max-height:400px;padding:1.25rem 1.5rem 1.5rem}
+
+/* CTA BAND */
+.cta-section{padding:3rem 0 3.75rem}
+.cta-card{background:var(--cream);border-radius:var(--r);border:1px solid var(--blush);display:grid;grid-template-columns:1fr 380px;overflow:hidden;min-height:300px}
+.cta-text{padding:3.5rem;display:flex;flex-direction:column;justify-content:center}
+.cta-text h2{font-size:clamp(1.6rem,2.6vw,2.2rem);font-weight:600;color:var(--text);line-height:1.2;margin-bottom:0.9rem}
+.cta-text p{font-size:0.9rem;color:var(--muted);line-height:1.7;max-width:360px;margin-bottom:2rem}
+.cta-img{position:relative;overflow:hidden}
+.cta-img-fade{position:absolute;inset:0;background:linear-gradient(to right,var(--cream) 0%,transparent 45%);z-index:1;pointer-events:none}
+.cta-btns{display:flex;gap:1rem;flex-wrap:wrap}
+
+/* FOOTER */
+footer{background:var(--cream);border-radius:var(--r) var(--r) 0 0;overflow:hidden}
+.footer-inner{max-width:1200px;margin:0 auto;padding:3.5rem 2rem 2rem}
+.footer-grid{display:grid;grid-template-columns:1fr auto;gap:3rem;padding-bottom:2rem;margin-bottom:2rem;border-bottom:1px solid var(--blush)}
+.f-logo{margin-bottom:1rem}
+.f-logo img{height:18px;opacity:0.85}
+.f-address{font-size:0.78rem;line-height:1.9;color:var(--muted);font-style:normal}
+.f-address a{color:var(--text);text-decoration:underline;transition:color 0.2s}
+.f-address a:hover{color:var(--muted)}
+.f-links{list-style:none;display:flex;flex-direction:column;gap:0.65rem;align-items:flex-end}
+.f-links a{font-size:0.68rem;letter-spacing:0.08em;text-transform:uppercase;font-weight:600;color:var(--text);text-decoration:underline;transition:color 0.2s}
+.f-links a:hover{color:var(--muted)}
+.f-copy{font-size:0.66rem;color:var(--text-muted)}
+
+/* REVEAL */
+.rv{opacity:0;transform:translateY(16px);transition:opacity 0.52s,transform 0.52s}
+.rv.in{opacity:1;transform:none}
+.d1{transition-delay:0.08s}.d2{transition-delay:0.16s}.d3{transition-delay:0.24s}.d4{transition-delay:0.32s}
+
+/* RESPONSIVE */
+@media(max-width:1020px){
+  .hero-inner{grid-template-columns:1fr;gap:2.5rem}.hero-card{max-width:440px;margin:0 auto}
+  .cta-card{grid-template-columns:1fr}.cta-img{display:none}
+  .testi-grid{grid-template-columns:1fr 1fr}
+  .included-grid{grid-template-columns:1fr}
+  .included-img{max-width:480px}
+  .steps-grid{grid-template-columns:1fr 1fr}
+  .bonus-grid{grid-template-columns:1fr 1fr}
+}
+@media(max-width:700px){
+  .testi-grid{grid-template-columns:1fr}
+  .pricing-grid{grid-template-columns:1fr;max-width:100%}
+  .footer-grid{grid-template-columns:1fr;gap:1.75rem}.f-links{align-items:flex-start}
+  .steps-grid{grid-template-columns:1fr}
+  .bonus-grid{grid-template-columns:1fr}
+  .disclaimer-box{flex-direction:column;gap:0.75rem}
+}
+@media(max-width:600px){
+  nav{width:calc(100% - 1.5rem);padding:0 0.9rem 0 0.8rem}
+  .nav-links{display:none}.nav-burger{display:flex}
+  .wrap,.wrap-md{padding:0 1.25rem}
+  .hero{padding:8rem 0 3.5rem}
+  .hero h1{font-size:1.75rem}
+  .sh h2{font-size:1.5rem}
+  .hero-ctas{flex-direction:column}
+  .hero-ctas .btn-primary,.hero-ctas .btn-outline{justify-content:center}
+  .cta-btns{flex-direction:column;align-items:stretch}
+  .cta-btns .btn-primary,.cta-btns .btn-outline{justify-content:center}
+  .online-only-banner p{font-size:0.68rem}
+}
+@media(prefers-reduced-motion:reduce){
+  .rv{opacity:1;transform:none;transition:none}
+  .hero-dot,.pulse{animation:none}
+  *{animation:none!important;transition:none!important}
+}
+</style>
+</head>
+<body>
+
+<!-- ONLINE-ONLY BANNER (sticky top) -->
+<div class="online-only-banner">
+  <p>
+    <svg class="oob-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+    <strong>Online platform only.</strong>&nbsp;This subscription gives you access to pre-recorded classes on your device. It does not include access to any yogahub studio or in-person classes.
+  </p>
+</div>
+
+<div class="mob-nav" id="mobNav">
+  <button class="mob-nav-close" onclick="document.getElementById('mobNav').classList.remove('open')">&#x00D7;</button>
+  <a href="https://yogahub.ie">yogahub Studios</a>
+  <a href="https://apply.yogahublearning.com/home-697556">Teacher Training</a>
+  <a href="https://join.yogahubonlinestudio.com">Online Studio</a>
+  <a href="https://yogahubonlinestudio.com/login" target="_blank" rel="noopener">Member Sign In</a>
+  <a href="https://join.yogahubonlinestudio.com/start" class="mob-cta">Start Free Trial</a>
+</div>
+
+<nav id="siteNav">
+  <a href="https://yogahub.ie" class="nav-logo"><img src="https://assets.cdn.filesafe.space/HLCTc8QkHltQ3ScL9MN1/media/66ab913a3ae93786069c636d.png" alt="yogahub" style="height:20px"></a>
+  <ul class="nav-links">
+    <li><a href="https://yogahub.ie">Studios</a></li>
+    <li><a href="https://apply.yogahublearning.com/home-697556">Teacher Training</a></li>
+    <li><a href="#how-it-works">How it works</a></li>
+    <li><a href="#pricing">Pricing</a></li>
+    <li><a href="https://yogahubonlinestudio.com/login" target="_blank" rel="noopener" class="nav-signin">Sign In</a></li>
+    <li><a href="https://join.yogahubonlinestudio.com/start" class="nav-btn">Start Free Trial</a></li>
+  </ul>
+  <button class="nav-burger" onclick="document.getElementById('mobNav').classList.add('open')" aria-label="Menu"><span></span><span></span><span></span></button>
+</nav>
+
+<main id="main">
+
+<!-- HERO -->
+<section class="hero">
+  <div class="wrap">
+    <div class="hero-inner">
+      <div class="rv">
+        <div class="hero-eyebrow"><span class="hero-dot"></span>Online Studio &middot; Pre-Recorded Classes</div>
+        <h1>Yoga, Pilates &amp; Barre.<br><em>On your schedule.</em></h1>
+        <p class="hero-sub">Hundreds of pre-recorded classes from yogahub's expert instructors — available on any device, any time, from anywhere in the world.</p>
+        <div class="hero-online-note">
+          <span class="hon-icon">&#x1F4BB;</span>
+          <span>This is an <strong>online-only platform</strong>. You'll stream pre-recorded video classes on your phone, tablet or laptop. This is separate from yogahub's studio memberships and does not grant access to in-person classes.</span>
+        </div>
+        <div class="hero-ctas">
+          <a href="https://join.yogahubonlinestudio.com/start" class="btn-primary">Start Your Free 7-Day Trial</a>
+          <a href="#how-it-works" class="btn-outline">See How It Works</a>
+        </div>
+        <div class="hero-trust">
+          <span class="hero-trust-item">7 days free — cancel anytime</span>
+          <span class="hero-trust-item">No commitment</span>
+          <span class="hero-trust-item">Stream on any device</span>
+        </div>
+      </div>
+      <div class="hero-card rv d2">
+        <!-- REPLACE: use an online studio / laptop/device screenshot image here -->
+        <img src="https://assets.cdn.filesafe.space/HLCTc8QkHltQ3ScL9MN1/media/69b54939eba487e57b4393e2.jpg" alt="yogahub Online Studio pre-recorded classes" style="width:100%;height:100%;object-fit:cover;display:block;position:absolute;inset:0">
+        <div class="hero-img-overlay"></div>
+        <div class="hero-stats-badge">
+          <div class="hbs"><div class="hbs-n">500+</div><div class="hbs-l">Classes</div></div>
+          <div class="hbs-div"></div>
+          <div class="hbs"><div class="hbs-n">3</div><div class="hbs-l">Disciplines</div></div>
+          <div class="hbs-div"></div>
+          <div class="hbs"><div class="hbs-n">4.9&#x2605;</div><div class="hbs-l">Rating</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="how-section" id="how-it-works">
+  <div class="wrap">
+    <div class="sh rv">
+      <span class="eyebrow">How It Works</span>
+      <h2>Three steps to your first class</h2>
+      <p>No hidden fees, no complicated setup. Your trial starts the moment you sign up.</p>
+    </div>
+    <div class="steps-grid">
+      <div class="step-card rv">
+        <div class="step-num">01</div>
+        <div class="step-title">Start your free trial</div>
+        <p class="step-desc">Enter your email and add a card to secure your 7 days. You won't be charged a thing until your trial ends.</p>
+      </div>
+      <div class="step-card rv d1">
+        <div class="step-num">02</div>
+        <div class="step-title">Explore the full library</div>
+        <p class="step-desc">Instant access to every class — yoga, pilates, barre — across all levels. Stream on your phone, tablet or laptop.</p>
+      </div>
+      <div class="step-card rv d2">
+        <div class="step-num">03</div>
+        <div class="step-title">Continue or cancel — your choice</div>
+        <p class="step-desc">If you love it, your subscription starts automatically. If not, cancel before day 7 and pay absolutely nothing.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHAT'S INCLUDED -->
+<section class="included-section" id="included">
+  <div class="wrap">
+    <div class="included-grid">
+      <div class="rv">
+        <div class="included-img">
+          <!-- REPLACE: use an online studio device/class image here -->
+          <img src="https://assets.cdn.filesafe.space/HLCTc8QkHltQ3ScL9MN1/media/69b54939eba487e57b4393e2.jpg" alt="yogahub Online Studio class library" style="width:100%;height:100%;object-fit:cover;display:block;position:absolute;inset:0">
+        </div>
+      </div>
+      <div class="rv d1">
+        <span class="eyebrow">What's Included</span>
+        <h2 style="font-size:clamp(1.6rem,2.6vw,2.2rem);font-weight:600;color:var(--text);line-height:1.15;margin-bottom:2rem">Everything you need to move well at home</h2>
+        <div class="included-list">
+          <div class="inc-item">
+            <div class="inc-icon">🧘</div>
+            <div class="inc-text">
+              <h3>Yoga classes — all levels</h3>
+              <p>Hatha, Vinyasa, Yin, Restorative and more. From 10-minute morning flows to 75-minute deep practices.</p>
+            </div>
+          </div>
+          <div class="inc-item">
+            <div class="inc-icon">🏋️</div>
+            <div class="inc-text">
+              <h3>Mat Pilates classes</h3>
+              <p>Core-focused classes designed by certified instructors. Beginner-friendly through to advanced.</p>
+            </div>
+          </div>
+          <div class="inc-item">
+            <div class="inc-icon">💃</div>
+            <div class="inc-text">
+              <h3>Barre classes</h3>
+              <p>Low-impact, high-results. Sculpting and toning sequences you can do in a small space at home.</p>
+            </div>
+          </div>
+          <div class="inc-item">
+            <div class="inc-icon">📱</div>
+            <div class="inc-text">
+              <h3>Stream on any device</h3>
+              <p>Watch on your phone, tablet, laptop or cast to your TV. Classes are available instantly, any time.</p>
+            </div>
+          </div>
+          <div class="inc-item">
+            <div class="inc-icon">🔄</div>
+            <div class="inc-text">
+              <h3>New classes added regularly</h3>
+              <p>The library grows every month. Your subscription always includes every new class as it's added.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- IMPORTANT DISCLAIMER -->
+<section class="disclaimer-section">
+  <div class="wrap">
+    <div class="disclaimer-box rv">
+      <div class="db-icon">&#x26A0;&#xFE0F;</div>
+      <div class="db-body">
+        <h3>This is an online, pre-recorded platform — not studio access</h3>
+        <p>yogahub Online Studio is a <strong>separate product</strong> from yogahub's studio memberships. Your subscription gives you access to stream pre-recorded video classes on your own device. It does <strong>not</strong> include entry to any yogahub studio, access to live classes, or any in-person services. If you'd like to practise in one of our Dublin studios, visit <a href="https://yogahub.ie" style="color:var(--text);font-weight:600;text-decoration:underline">yogahub.ie</a> for studio membership options.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BONUSES -->
+<section class="bonus-section" id="bonuses">
+  <div class="wrap">
+    <div class="sh rv" style="text-align:center">
+      <span class="eyebrow" style="display:block;text-align:center">Included Free</span>
+      <h2 style="font-size:clamp(1.6rem,2.6vw,2.2rem);font-weight:600;color:var(--text);line-height:1.15">Every subscription includes these bonuses</h2>
+      <p style="max-width:500px;margin:0.5rem auto 0;font-size:0.91rem;color:var(--muted);line-height:1.82">Yours from day one of your free trial — not locked behind an upgrade.</p>
+    </div>
+    <div class="bonus-grid rv d1">
+      <div class="bonus-card">
+        <div class="bonus-badge">&#x1F381; Bonus 1</div>
+        <div class="bonus-title">Beginner's Guide to Home Practice</div>
+        <div class="bonus-desc">A structured 2-week starter programme to help you build a consistent at-home movement habit — even if you've never practised before.</div>
+        <div class="bonus-value">Free with every plan &middot; <span>Valued at €29</span></div>
+      </div>
+      <div class="bonus-card">
+        <div class="bonus-badge">&#x1F381; Bonus 2</div>
+        <div class="bonus-title">30-Day Movement Challenge</div>
+        <div class="bonus-desc">A guided 30-day programme mixing yoga, pilates and barre. One class a day, every day — designed to keep you moving and motivated.</div>
+        <div class="bonus-value">Free with every plan &middot; <span>Valued at €39</span></div>
+      </div>
+      <div class="bonus-card">
+        <div class="bonus-badge">&#x1F381; Bonus 3</div>
+        <div class="bonus-title">Breathwork &amp; Meditation Library</div>
+        <div class="bonus-desc">A curated collection of breathwork and meditation sessions from yogahub instructors. Short sessions for busy days, longer practices for rest days.</div>
+        <div class="bonus-value">Free with every plan &middot; <span>Valued at €25</span></div>
+      </div>
+    </div>
+    <p style="text-align:center;font-size:0.75rem;color:var(--muted);margin-top:1.25rem;font-style:italic" class="rv d2">&#x26A0; Bonus details above are placeholders — update with the actual bonuses from join.yogahubonlinestudio.com/start once confirmed.</p>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section class="pricing-section" id="pricing">
+  <div class="wrap">
+    <div class="sh rv" style="text-align:center">
+      <span class="eyebrow" style="display:block;text-align:center">Pricing</span>
+      <h2 style="font-size:clamp(1.6rem,2.6vw,2.2rem);font-weight:600;color:var(--text);line-height:1.15;text-align:center">Two plans. One library. Cancel anytime.</h2>
+      <p style="max-width:480px;margin:0.5rem auto 0;font-size:0.91rem;color:var(--muted);line-height:1.82;text-align:center">Both plans include full access to every class, every bonus, and every new addition to the library.</p>
+    </div>
+    <div class="pricing-grid rv d1">
+      <div class="p-card">
+        <div class="p-tier">Monthly</div>
+        <div class="p-price">&#x20AC;12.99 <span class="p-per">/ month</span></div>
+        <div class="p-note">Billed monthly, cancel anytime</div>
+        <div class="p-save">&nbsp;</div>
+        <div class="p-divider"></div>
+        <ul class="p-features">
+          <li>Unlimited access to full class library</li>
+          <li>Yoga, Pilates &amp; Barre classes</li>
+          <li>All bonuses included</li>
+          <li>Stream on any device</li>
+          <li>Cancel anytime</li>
+        </ul>
+        <a href="https://join.yogahubonlinestudio.com/start" class="btn-outline">Start Free Trial</a>
+        <p class="p-trial-note">7 days free &middot; card required &middot; no charge until day 8</p>
+      </div>
+      <div class="p-card featured">
+        <div class="p-tier">Annual</div>
+        <div class="p-price">&#x20AC;129 <span class="p-per">/ year</span></div>
+        <div class="p-note">That's just €10.75 per month</div>
+        <div class="p-save">Save &#x20AC;26.88 vs monthly</div>
+        <div class="p-divider"></div>
+        <ul class="p-features">
+          <li>Unlimited access to full class library</li>
+          <li>Yoga, Pilates &amp; Barre classes</li>
+          <li>All bonuses included</li>
+          <li>Stream on any device</li>
+          <li>Cancel anytime</li>
+        </ul>
+        <a href="https://join.yogahubonlinestudio.com/start" class="btn-primary">Start Free Trial</a>
+        <p class="p-trial-note">7 days free &middot; card required &middot; no charge until day 8</p>
+      </div>
+    </div>
+    <div class="trial-notice rv d2">
+      <p><strong>How your free trial works:</strong> When you sign up, you'll enter your card details to secure your trial. You will <strong>not</strong> be charged anything for the first 7 days. On day 8, your chosen plan begins. You can cancel at any time before then — no questions asked, no charge.</p>
+    </div>
+  </div>
+</section>
+
+<!-- VIDEO TESTIMONIALS -->
+<section class="testi-section">
+  <div class="wrap">
+    <div class="sh rv">
+      <span class="eyebrow">Member Stories</span>
+      <h2>Hear from people practising at home</h2>
+    </div>
+    <div class="testi-grid">
+      <div class="testi-card rv">
+        <div class="testi-video-wrap" onclick="playVid(this)">
+          <!-- REPLACE: swap in online studio member testimonial videos -->
+          <video src="https://assets.cdn.filesafe.space/bjJdAOxqv6qUquOelvPN/media/698c4d460177074a64c975d6.mp4" poster="https://assets.cdn.filesafe.space/bjJdAOxqv6qUquOelvPN/media/698c4d17a41b877e1e940ee5.png" playsinline preload="metadata"></video>
+          <div class="testi-vid-fade"></div>
+          <div class="testi-play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
+        </div>
+        <div class="testi-body">
+          <div class="testi-attr"><div class="testi-avatar">M</div><div><div class="testi-name">Mary</div><div class="testi-role">Online Studio member</div></div></div>
+        </div>
+      </div>
+      <div class="testi-card rv d1">
+        <div class="testi-video-wrap" onclick="playVid(this)">
+          <video src="https://assets.cdn.filesafe.space/bjJdAOxqv6qUquOelvPN/media/699c287ad0716b872c26d281.mp4" playsinline preload="metadata" loading="lazy"></video>
+          <div class="testi-vid-fade"></div>
+          <div class="testi-play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
+        </div>
+        <div class="testi-body">
+          <div class="testi-attr"><div class="testi-avatar">C</div><div><div class="testi-name">Christian</div><div class="testi-role">Online Studio member</div></div></div>
+        </div>
+      </div>
+      <div class="testi-card rv d2">
+        <div class="testi-video-wrap" onclick="playVid(this)">
+          <video src="https://assets.cdn.filesafe.space/bjJdAOxqv6qUquOelvPN/media/698c514152c9522a9df78ea1.mp4" poster="https://assets.cdn.filesafe.space/bjJdAOxqv6qUquOelvPN/media/699c286b590acb3edaad3905.png" playsinline preload="metadata" loading="lazy"></video>
+          <div class="testi-vid-fade"></div>
+          <div class="testi-play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
+        </div>
+        <div class="testi-body">
+          <div class="testi-attr"><div class="testi-avatar">D</div><div><div class="testi-name">Dali</div><div class="testi-role">Online Studio member</div></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GOOGLE REVIEWS -->
+<section class="reviews-section">
+  <div class="wrap">
+    <div class="sh rv">
+      <span class="eyebrow">Verified Reviews</span>
+      <h2>3,000+ happy members. One thing in common.</h2>
+    </div>
+    <div class="reviews-wrap rv d1">
+      <script type="text/javascript" src="https://link.theyogahub.ie/reputation/assets/review-widget.js"></script>
+      <iframe class="lc_reviews_widget" src="https://link.theyogahub.ie/reputation/widgets/review_widget/bjJdAOxqv6qUquOelvPN" frameborder="0" scrolling="no" title="yogahub Google Reviews" style="min-width:100%;width:100%;border:none;display:block" loading="lazy"></iframe>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section style="padding:4.5rem 0;background:var(--white)">
+  <div class="wrap-md">
+    <div class="sh rv" style="text-align:center"><span class="eyebrow" style="display:block;text-align:center">Common Questions</span><h2>Before you sign up</h2></div>
+    <div class="faq-list rv d1">
+      <div class="faq-item"><button class="faq-q" onclick="faq(this)">Is this the same as a yogahub studio membership?<span class="faq-icon">+</span></button><div class="faq-ans">No. yogahub Online Studio is completely separate from any studio or in-person membership. It gives you access to stream pre-recorded video classes on your own device. It does not include entry to any yogahub studio location, live classes, or any in-person services.</div></div>
+      <div class="faq-item"><button class="faq-q" onclick="faq(this)">Will I be charged during the 7-day trial?<span class="faq-icon">+</span></button><div class="faq-ans">No. Your card is required to start the trial, but you will not be charged anything for the first 7 days. If you cancel before the end of day 7, you pay nothing. On day 8, your subscription begins and your first payment is taken.</div></div>
+      <div class="faq-item"><button class="faq-q" onclick="faq(this)">What devices can I use?<span class="faq-icon">+</span></button><div class="faq-ans">You can stream on any smartphone, tablet, laptop or desktop. You can also cast from your phone or laptop to a TV using Chromecast or AirPlay. There is no equipment required — just a mat and enough space to move.</div></div>
+      <div class="faq-item"><button class="faq-q" onclick="faq(this)">Can I cancel at any time?<span class="faq-icon">+</span></button><div class="faq-ans">Yes. You can cancel your subscription at any time from your account settings. If you cancel during your free trial, you will not be charged. If you cancel after your subscription has started, you retain access until the end of your current billing period.</div></div>
+      <div class="faq-item"><button class="faq-q" onclick="faq(this)">How many classes are available?<span class="faq-icon">+</span></button><div class="faq-ans">The library currently contains hundreds of classes across yoga, mat pilates and barre. New classes are added regularly. All new additions are included in your subscription automatically.</div></div>
+      <div class="faq-item"><button class="faq-q" onclick="faq(this)">Do I need any experience to start?<span class="faq-icon">+</span></button><div class="faq-ans">Not at all. The library includes beginner-friendly classes across all disciplines. Each class is clearly labelled with its level so you can find the right starting point and progress at your own pace.</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- BOTTOM CTA -->
+<section class="cta-section">
+  <div class="wrap">
+    <div class="cta-card rv">
+      <div class="cta-text">
+        <span class="eyebrow">Ready to try it?</span>
+        <h2>7 days free. No commitment.</h2>
+        <p>Start your free trial today and access the full library immediately. Cancel before day 7 and pay nothing.</p>
+        <div class="cta-btns">
+          <a href="https://join.yogahubonlinestudio.com/start" class="btn-primary">Start Your Free Trial</a>
+          <a href="#how-it-works" class="btn-outline">See How It Works</a>
+        </div>
+      </div>
+      <div class="cta-img">
+        <div class="cta-img-fade"></div>
+        <!-- REPLACE: use an online studio / lifestyle image here -->
+        <img src="https://assets.cdn.filesafe.space/HLCTc8QkHltQ3ScL9MN1/media/69b54939eba487e57b4393e2.jpg" alt="yogahub Online Studio" style="width:100%;height:100%;object-fit:cover;display:block;position:absolute;inset:0" loading="lazy">
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-grid">
+      <div>
+        <div class="f-logo"><img src="https://assets.cdn.filesafe.space/HLCTc8QkHltQ3ScL9MN1/media/66ab913a3ae93786069c636d.png" alt="yogahub" style="height:18px;opacity:0.85"></div>
+        <address class="f-address">yogahub Online Studio<br>Practise anywhere, any time<br><a href="mailto:hello@yogahub.ie">hello@yogahub.ie</a></address>
+      </div>
+      <ul class="f-links">
+        <li><a href="https://yogahub.ie">yogahub Studios</a></li>
+        <li><a href="https://apply.yogahublearning.com/yoga-teacher-training">200HR Yoga Training</a></li>
+        <li><a href="https://apply.yogahublearning.com/pilates-teacher-training">Mat Pilates Training</a></li>
+        <li><a href="https://apply.yogahublearning.com/reformer-teacher-training-">Reformer Training</a></li>
+        <li><a href="#pricing">Pricing</a></li>
+        <li><a href="https://yogahubonlinestudio.com/login" target="_blank" rel="noopener">Member Sign In &#x2197;</a></li>
+      </ul>
+    </div>
+    <p class="f-copy">&#x00A9; 2026 yogahub. All rights reserved. &nbsp;|&nbsp; yogahub Online Studio is a digital subscription product and does not include any in-studio or in-person access.</p>
+  </div>
+</footer>
+
+<script>
+function playVid(wrap){var card=wrap.closest('.testi-card'),video=wrap.querySelector('video');document.querySelectorAll('.testi-card.playing').forEach(function(c){if(c!==card){c.classList.remove('playing');var v=c.querySelector('video');v.pause();v.removeAttribute('controls');}});card.classList.add('playing');video.setAttribute('controls','');video.play();}
+function faq(btn){var item=btn.closest('.faq-item'),isOpen=item.classList.contains('open');btn.closest('.faq-list').querySelectorAll('.faq-item').forEach(function(i){i.classList.remove('open');});if(!isOpen)item.classList.add('open');}
+var ro=new IntersectionObserver(function(entries){entries.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');ro.unobserve(e.target);}});},{threshold:0.07});
+document.querySelectorAll('.rv').forEach(function(el){ro.observe(el);});
+var nav=document.getElementById('siteNav');
+window.addEventListener('scroll',function(){nav.classList.toggle('scrolled',window.scrollY>40);},{passive:true});
+function checkBurger(){var b=document.querySelector('.nav-burger');if(b)b.style.display=window.innerWidth<=600?'flex':'none';}
+window.addEventListener('resize',checkBurger);checkBurger();
+</script>
+</body>
+</html>
