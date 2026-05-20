@@ -116,6 +116,9 @@ nav.scrolled{background:rgba(255,255,255,0.96);box-shadow:0 4px 28px rgba(0,0,0,
 .intake-status-dot{width:5px;height:5px;border-radius:50%;background:var(--dusty-rose);flex-shrink:0;animation:pulse 2s infinite}
 .intake-badge{font-size:0.6rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;padding:0.22rem 0.7rem;border-radius:50px;border:1px solid;white-space:nowrap;color:var(--muted);border-color:var(--blush);background:rgba(216,196,196,0.1)}
 .intake-badge.coming-soon{color:var(--mauve);border-color:var(--mauve);background:rgba(189,178,189,0.1)}
+.intake-badge.sold-out{color:var(--mauve);border-color:var(--mauve);background:rgba(189,178,189,0.1)}
+.intake-card.sold-out{opacity:0.78}
+.intake-card.sold-out .intake-status-dot{animation:none;background:var(--mauve)}
 .intake-title{font-size:1.05rem;font-weight:600;color:var(--text);line-height:1.25;margin-bottom:1.4rem}
 .intake-meta{display:grid;grid-template-columns:1fr 1fr;gap:0.85rem 1rem;margin-bottom:1.4rem}
 .intake-meta-label{font-size:0.56rem;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:var(--dusty-rose);margin-bottom:0.2rem}
@@ -340,8 +343,8 @@ footer{background:var(--cream);border-radius:var(--r) var(--r) 0 0;overflow:hidd
       <p>All courses deliver the full YMCA Awards Mat Pilates certification. Now enrolling across all locations.</p>
     </div>
     <div class="intakes-grid">
-      <div class="intake-card rv">
-        <div class="intake-top"><div class="intake-status"><div class="intake-status-dot"></div>Enrolment open</div><div class="intake-badge">Enrolling now</div></div>
+      <div class="intake-card sold-out rv">
+        <div class="intake-top"><div class="intake-status"><div class="intake-status-dot"></div>Sold out</div><div class="intake-badge sold-out">Sold out</div></div>
         <div class="intake-title">Mat Pilates Training<br>Camden</div>
         <div class="intake-meta">
           <div class="intake-meta-item"><div class="intake-meta-label">Start date</div><div class="intake-meta-val">13 June</div></div>
@@ -350,7 +353,7 @@ footer{background:var(--cream);border-radius:var(--r) var(--r) 0 0;overflow:hidd
           <div class="intake-meta-item"><div class="intake-meta-label">Hours</div><div class="intake-meta-val">12.15pm&ndash;6.15pm</div><div class="intake-meta-sub">each day</div></div>
         </div>
         <div class="intake-desc">13&ndash;14 June &nbsp;/&nbsp; 27&ndash;28 June &nbsp;/&nbsp; 18&ndash;19 July &nbsp;/&nbsp; 15&ndash;16 August</div>
-        <a href="https://apply.yogahublearning.com/book-your-discovery-call-695787" class="intake-cta">Book a Discovery Call</a>
+        <a href="https://apply.yogahublearning.com/join-the-waitlist" class="intake-cta-outline">Join the Waitlist</a>
       </div>
       <div class="intake-card rv d1">
         <div class="intake-top"><div class="intake-status"><div class="intake-status-dot"></div>Enrolment open</div><div class="intake-badge">Enrolling now</div></div>
