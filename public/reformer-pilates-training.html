@@ -126,6 +126,11 @@ nav.scrolled{background:rgba(255,255,255,0.96);box-shadow:0 4px 28px rgba(0,0,0,
 .cm-value{font-size:0.84rem;font-weight:600;color:var(--text);line-height:1.45}
 .cm-sub{font-size:0.76rem;color:var(--muted)}
 .cohort-note{font-size:0.8rem;color:var(--muted);line-height:1.65;margin-bottom:1.5rem;padding:0.85rem;background:var(--cream);border-radius:var(--r-sm);border:1px solid var(--blush)}
+.cohort-schedule{margin-bottom:1.5rem;border:1px solid var(--line);border-radius:var(--r-sm);overflow:hidden;background:var(--white)}
+.cs-row{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:0.75rem 1rem;border-bottom:1px solid var(--line);font-size:0.82rem}
+.cs-row:last-child{border-bottom:none;background:rgba(216,196,196,0.12)}
+.cs-date{font-weight:600;color:var(--text)}
+.cs-label{font-size:0.6rem;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:var(--dusty-rose)}
 
 /* PRICING */
 .pricing-section{background:var(--cream);padding:4.5rem 0}
@@ -332,12 +337,18 @@ footer{background:var(--cream);border-radius:var(--r) var(--r) 0 0;overflow:hidd
         </div>
         <div class="cohort-body">
           <div class="cohort-meta">
-            <div class="cm-item"><div class="cm-label">Format</div><div class="cm-value">Saturday &amp; Sunday</div><div class="cm-sub">Weekend modules, in-person</div></div>
+            <div class="cm-item"><div class="cm-label">Start date</div><div class="cm-value">11 July</div><div class="cm-sub">4 weekends &middot; YMCA certified</div></div>
             <div class="cm-item"><div class="cm-label">Location</div><div class="cm-value">yogahub Bluebell</div><div class="cm-sub">Old Naas Road, Bluebell, Dublin 12</div></div>
-            <div class="cm-item"><div class="cm-label">Duration</div><div class="cm-value">2 months</div><div class="cm-sub">YMCA certified programme</div></div>
+            <div class="cm-item"><div class="cm-label">Format</div><div class="cm-value">Saturday &amp; Sunday</div><div class="cm-sub">Weekend modules, in-person</div></div>
             <div class="cm-item"><div class="cm-label">Equipment</div><div class="cm-value">Full Reformer studio</div><div class="cm-sub">Hands-on from day one</div></div>
           </div>
-          <div class="cohort-note">A Level 3 Mat Pilates qualification is required to enrol. Book a discovery call to confirm start dates and discuss your prerequisites.</div>
+          <div class="cohort-schedule">
+            <div class="cs-row"><span class="cs-date">11&ndash;12 July</span><span class="cs-label">Weekend 1</span></div>
+            <div class="cs-row"><span class="cs-date">25&ndash;26 July</span><span class="cs-label">Weekend 2</span></div>
+            <div class="cs-row"><span class="cs-date">8&ndash;9 August</span><span class="cs-label">Weekend 3</span></div>
+            <div class="cs-row"><span class="cs-date">22&ndash;23 August</span><span class="cs-label">Assessment Weekend</span></div>
+          </div>
+          <div class="cohort-note">A Level 3 Mat Pilates qualification is required to enrol. Book a discovery call to confirm your spot and discuss your prerequisites.</div>
           <a href="https://apply.yogahublearning.com/book-your-discovery-call-695787" class="btn-primary" style="width:100%">Book a Discovery Call</a>
         </div>
       </div>
