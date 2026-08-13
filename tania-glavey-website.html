@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tania Glavey · Marketing Systems for Wellness Educators</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&family=Playfair+Display:ital,wght@0,400;0,500;1,400;1,500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --cream: #FBF8F3;
+  --warm-white: #FFFDF9;
+  --blush: #D4917B;
+  --blush-light: #E8B4A2;
+  --blush-pale: #FDF0EB;
+  --rose: #C17B8E;
+  --rose-light: #E4A8B8;
+  --sage: #8FA68E;
+  --sage-light: #B8CCAE;
+  --sage-pale: #EEF3EC;
+  --gold: #C9A96E;
+  --gold-light: #E2CFA0;
+  --dark: #2C2420;
+  --mid: #5A4E45;
+  --muted: #9B8E84;
+  --border: #E8E0D6;
+  --border-light: #F0EBE5;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { font-family: 'DM Sans', sans-serif; background: var(--warm-white); color: var(--dark); line-height: 1.7; overflow-x: hidden; }
+.label { font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--rose); font-weight: 500; }
+.tag-line { display: inline-block; background: var(--blush-pale); color: var(--blush); font-size: 12px; letter-spacing: 0.15em; text-transform: uppercase; padding: 8px 20px; border-radius: 100px; font-weight: 500; margin-bottom: 24px; }
+.btn-primary { background: linear-gradient(135deg, var(--blush) 0%, var(--rose) 100%); color: white; padding: 17px 36px; border-radius: 100px; font-size: 15px; font-weight: 500; text-decoration: none; display: inline-flex; align-items: center; gap: 8px; transition: all 0.35s cubic-bezier(0.25,0.46,0.45,0.94); box-shadow: 0 4px 24px rgba(193,123,142,0.3); cursor: pointer; border: none; font-family: 'DM Sans', sans-serif; position: relative; overflow: hidden; }
+.btn-primary::after { content: ''; position: absolute; inset: 0; background: linear-gradient(135deg, var(--rose) 0%, var(--blush) 100%); opacity: 0; transition: opacity 0.35s; }
+.btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 32px rgba(193,123,142,0.4); }
+.btn-primary:hover::after { opacity: 1; }
+.btn-primary span { position: relative; z-index: 1; }
+.btn-ghost { color: var(--mid); font-size: 14px; text-decoration: none; display: flex; align-items: center; gap: 6px; border-bottom: 1px solid var(--border); padding-bottom: 2px; transition: color 0.3s, border-color 0.3s; }
+.btn-ghost:hover { color: var(--rose); border-color: var(--rose-light); }
+.reveal { opacity: 0; transform: translateY(32px); transition: opacity 0.8s cubic-bezier(0.25,0.46,0.45,0.94), transform 0.8s cubic-bezier(0.25,0.46,0.45,0.94); }
+.reveal.visible { opacity: 1; transform: translateY(0); }
+.reveal-delay-1 { transition-delay: 0.1s; }
+.reveal-delay-2 { transition-delay: 0.2s; }
+.reveal-delay-3 { transition-delay: 0.3s; }
+.reveal-delay-4 { transition-delay: 0.4s; }
+nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; justify-content: space-between; align-items: center; padding: 18px 60px; background: rgba(255,253,249,0.85); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border-bottom: 1px solid rgba(232,224,214,0.5); transition: padding 0.3s, box-shadow 0.3s; }
+nav.scrolled { padding: 14px 60px; box-shadow: 0 4px 30px rgba(44,36,32,0.06); }
+.nav-logo { font-family: 'Playfair Display', serif; font-size: 24px; font-weight: 500; color: var(--dark); letter-spacing: -0.02em; }
+.nav-logo span { color: var(--rose); font-style: italic; }
+nav ul { list-style: none; display: flex; gap: 36px; align-items: center; }
+nav ul li a { text-decoration: none; color: var(--mid); font-size: 13.5px; transition: color 0.3s; position: relative; }
+nav ul li a:not(.nav-cta)::after { content: ''; position: absolute; bottom: -4px; left: 0; width: 0; height: 1.5px; background: var(--rose); transition: width 0.3s; }
+nav ul li a:not(.nav-cta):hover::after { width: 100%; }
+nav ul li a:hover { color: var(--rose); }
+.nav-cta { background: var(--dark) !important; color: var(--warm-white) !important; padding: 11px 24px; border-radius: 100px; font-size: 13px !important; font-weight: 500 !important; transition: all 0.3s !important; }
+.nav-cta:hover { background: var(--rose) !important; color: white !important; transform: translateY(-1px); }
+.hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; z-index: 110; }
+.hamburger span { width: 24px; height: 2px; background: var(--dark); border-radius: 2px; display: block; transition: all 0.3s; }
+.hamburger.active span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+.hamburger.active span:nth-child(2) { opacity: 0; }
+.hamburger.active span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
+.mobile-nav { position: fixed; top: 0; right: -100%; width: 100%; height: 100vh; background: var(--cream); z-index: 105; display: flex; flex-direction: column; justify-content: center; align-items: center; gap: 32px; transition: right 0.4s cubic-bezier(0.25,0.46,0.45,0.94); }
+.mobile-nav.open { right: 0; }
+.mobile-nav a { font-family: 'Playfair Display', serif; font-size: 28px; color: var(--dark); text-decoration: none; transition: color 0.3s; }
+.mobile-nav a:hover { color: var(--rose); }
+.hero { min-height: 100vh; display: grid; grid-template-columns: 1fr 1fr; background: var(--cream); padding-top: 80px; overflow: hidden; position: relative; }
+.hero::before { content: ''; position: absolute; top: -100px; right: -100px; width: 500px; height: 500px; background: radial-gradient(circle, rgba(193,123,142,0.06) 0%, transparent 70%); pointer-events: none; }
+.hero::after { content: ''; position: absolute; bottom: -150px; left: -150px; width: 400px; height: 400px; background: radial-gradient(circle, rgba(143,166,142,0.06) 0%, transparent 70%); pointer-events: none; }
+.hero-text { display: flex; flex-direction: column; justify-content: center; padding: 80px 60px 80px 80px; position: relative; z-index: 2; }
+.hero h1 { font-family: 'Playfair Display', serif; font-size: clamp(40px, 4.8vw, 62px); font-weight: 400; line-height: 1.1; color: var(--dark); margin-bottom: 24px; letter-spacing: -0.02em; }
+.hero h1 em { font-style: italic; color: var(--rose); }
+.hero-sub { font-size: 17px; color: var(--mid); max-width: 460px; line-height: 1.8; margin-bottom: 40px; font-weight: 300; }
+.hero-cta-group { display: flex; align-items: center; gap: 24px; flex-wrap: wrap; }
+.hero-social-proof { margin-top: 52px; display: flex; align-items: center; gap: 20px; }
+.proof-avatars { display: flex; }
+.proof-avatars span { width: 38px; height: 38px; border-radius: 50%; background: linear-gradient(135deg, var(--sage-pale), var(--blush-pale)); border: 2.5px solid var(--cream); margin-right: -10px; display: flex; align-items: center; justify-content: center; font-size: 11px; color: var(--muted); font-weight: 500; }
+.proof-text { font-size: 13px; color: var(--muted); line-height: 1.5; }
+.proof-text strong { display: block; color: var(--mid); font-size: 14px; }
+.hero-image { position: relative; overflow: hidden; }
+.hero-image img { width: 100%; height: 100%; object-fit: cover; object-position: top center; display: block; }
+.hero-image::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 120px; background: linear-gradient(to top, var(--cream), transparent); pointer-events: none; }
+.hero-badge { position: absolute; bottom: 56px; left: -20px; background: white; padding: 20px 26px; border-radius: 16px; box-shadow: 0 8px 40px rgba(44,36,32,0.1); max-width: 220px; z-index: 10; border: 1px solid var(--border-light); }
+.hero-badge .badge-stat { font-family: 'Playfair Display', serif; font-size: 38px; font-weight: 500; color: var(--rose); line-height: 1; margin-bottom: 4px; }
+.hero-badge .badge-label { font-size: 12px; color: var(--muted); line-height: 1.4; }
+.trust-bar { background: var(--dark); padding: 28px 60px; display: flex; align-items: center; gap: 48px; flex-wrap: wrap; position: relative; }
+.trust-label { font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(255,253,249,0.3); white-space: nowrap; }
+.trust-clients { display: flex; gap: 48px; align-items: center; flex-wrap: wrap; }
+.client-name { font-family: 'Playfair Display', serif; font-size: 18px; color: rgba(255,253,249,0.45); white-space: nowrap; transition: color 0.3s; }
+.client-name:hover { color: rgba(255,253,249,0.7); }
+.problem-section { padding: 120px 80px; background: var(--warm-white); display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: start; position: relative; }
+.problem-section::before { content: ''; position: absolute; top: 60px; right: 40px; width: 300px; height: 300px; background: radial-gradient(circle, rgba(193,123,142,0.04) 0%, transparent 70%); pointer-events: none; }
+.problem-left h2 { font-family: 'Playfair Display', serif; font-size: clamp(32px, 3.8vw, 48px); font-weight: 400; line-height: 1.15; color: var(--dark); margin-bottom: 28px; }
+.problem-left h2 em { font-style: italic; color: var(--rose); }
+.problem-left p { font-size: 16px; color: var(--mid); line-height: 1.85; font-weight: 300; margin-bottom: 20px; }
+.bridge-line { margin-top: 36px; padding: 28px 32px; background: linear-gradient(135deg, var(--blush) 0%, var(--rose) 100%); border-radius: 20px; color: white; position: relative; overflow: hidden; }
+.bridge-line::before { content: ''; position: absolute; top: -30px; right: -30px; width: 120px; height: 120px; background: rgba(255,255,255,0.08); border-radius: 50%; }
+.bridge-line p { font-family: 'Playfair Display', serif; font-size: 20px; font-style: italic; line-height: 1.55; font-weight: 400; position: relative; z-index: 1; }
+.pain-card { background: var(--cream); border-radius: 18px; padding: 22px 26px; margin-bottom: 12px; display: grid; grid-template-columns: 48px 1fr; gap: 16px; align-items: start; border: 1px solid var(--border-light); transition: all 0.35s cubic-bezier(0.25,0.46,0.45,0.94); }
+.pain-card:hover { border-color: var(--rose-light); transform: translateX(6px); box-shadow: 0 4px 20px rgba(193,123,142,0.08); }
+.pain-icon { width: 48px; height: 48px; background: white; border-radius: 14px; border: 1px solid var(--border-light); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+.pain-icon svg { width: 20px; height: 20px; }
+.pain-card h4 { font-size: 14px; font-weight: 500; color: var(--dark); margin-bottom: 5px; }
+.pain-card p { font-size: 13px; color: var(--muted); line-height: 1.65; }
+.about-section { padding: 120px 80px; background: var(--cream); display: grid; grid-template-columns: 5fr 7fr; gap: 80px; align-items: center; position: relative; overflow: hidden; }
+.about-section::before { content: ''; position: absolute; bottom: -100px; left: -100px; width: 400px; height: 400px; background: radial-gradient(circle, rgba(143,166,142,0.07) 0%, transparent 70%); pointer-events: none; }
+.about-image-wrap { position: relative; }
+.about-image-wrap img { width: 100%; aspect-ratio: 4/5; object-fit: cover; object-position: top center; border-radius: 200px 200px 24px 24px; display: block; }
+.about-badge-wrap { position: absolute; bottom: -20px; right: -20px; background: white; border-radius: 18px; padding: 22px 26px; box-shadow: 0 8px 40px rgba(44,36,32,0.08); border: 1px solid var(--border-light); }
+.about-badge-wrap .stat { font-family: 'Playfair Display', serif; font-size: 42px; color: var(--rose); font-weight: 500; line-height: 1; }
+.about-badge-wrap .stat-label { font-size: 12px; color: var(--muted); margin-top: 4px; }
+.about-text h2 { font-family: 'Playfair Display', serif; font-size: clamp(30px, 3.5vw, 46px); font-weight: 400; color: var(--dark); line-height: 1.15; margin-bottom: 24px; }
+.about-text h2 em { font-style: italic; color: var(--rose); }
+.about-text p { font-size: 16px; color: var(--mid); line-height: 1.85; font-weight: 300; margin-bottom: 20px; }
+.expertise-pills { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 28px; }
+.pill { background: white; border: 1px solid var(--border); padding: 8px 18px; border-radius: 100px; font-size: 13px; color: var(--mid); transition: all 0.3s; }
+.pill:hover { border-color: var(--sage-light); background: var(--sage-pale); }
+.pill.accent { background: var(--blush-pale); border-color: var(--blush-light); color: var(--blush); }
+.pill.accent:hover { background: var(--blush); color: white; }
+.services-section { padding: 120px 80px; background: var(--warm-white); position: relative; }
+.services-section::before { content: ''; position: absolute; top: 0; left: 50%; transform: translateX(-50%); width: 600px; height: 400px; background: radial-gradient(ellipse, rgba(193,123,142,0.04) 0%, transparent 70%); pointer-events: none; }
+.section-header { text-align: center; margin-bottom: 64px; position: relative; }
+.section-header h2 { font-family: 'Playfair Display', serif; font-size: clamp(32px, 4vw, 50px); font-weight: 400; color: var(--dark); line-height: 1.12; margin-bottom: 14px; margin-top: 12px; }
+.section-header h2 em { font-style: italic; color: var(--rose); }
+.section-header p { font-size: 16px; color: var(--muted); max-width: 500px; margin: 0 auto; font-weight: 300; line-height: 1.75; }
+.services-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; max-width: 1100px; margin: 0 auto 36px; }
+.service-card { border: 1px solid var(--border); border-radius: 28px; padding: 48px; background: var(--warm-white); position: relative; overflow: hidden; transition: all 0.4s cubic-bezier(0.25,0.46,0.45,0.94); }
+.service-card:hover { border-color: var(--rose-light); box-shadow: 0 12px 48px rgba(193,123,142,0.1); transform: translateY(-4px); }
+.service-card.featured { background: linear-gradient(160deg, #2C2420 0%, #3D3530 100%); border-color: transparent; }
+.service-card.featured:hover { box-shadow: 0 12px 48px rgba(44,36,32,0.25); }
+.service-number { font-family: 'Playfair Display', serif; font-size: 72px; font-weight: 300; color: var(--border); line-height: 1; position: absolute; top: 24px; right: 32px; opacity: 0.5; }
+.service-card.featured .service-number { color: rgba(255,253,249,0.04); }
+.service-card h3 { font-family: 'Playfair Display', serif; font-size: 26px; font-weight: 500; color: var(--dark); margin-bottom: 6px; line-height: 1.2; position: relative; z-index: 1; }
+.service-card.featured h3 { color: white; }
+.service-tagline { font-size: 13px; color: var(--muted); margin-bottom: 24px; font-style: italic; position: relative; z-index: 1; }
+.service-card.featured .service-tagline { color: rgba(255,253,249,0.4); }
+.service-desc { font-size: 14.5px; color: var(--mid); line-height: 1.75; margin-bottom: 28px; position: relative; z-index: 1; }
+.service-card.featured .service-desc { color: rgba(255,253,249,0.6); }
+.service-includes { list-style: none; margin-bottom: 32px; position: relative; z-index: 1; }
+.service-includes li { font-size: 13.5px; color: var(--mid); padding: 8px 0; border-bottom: 1px solid var(--border-light); display: flex; align-items: center; gap: 10px; }
+.service-card.featured .service-includes li { color: rgba(255,253,249,0.55); border-bottom-color: rgba(255,253,249,0.06); }
+.service-includes li::before { content: ''; width: 6px; height: 6px; border-radius: 50%; background: var(--rose-light); flex-shrink: 0; }
+.service-card.featured .service-includes li::before { background: var(--rose); }
+.service-cta { display: inline-flex; align-items: center; gap: 8px; font-size: 14px; font-weight: 500; color: var(--rose); text-decoration: none; position: relative; z-index: 1; border-bottom: 1px solid rgba(193,123,142,0.3); padding-bottom: 2px; transition: all 0.3s; }
+.service-cta:hover { border-color: var(--rose); }
+.service-card.featured .service-cta { color: var(--rose-light); }
+.audit-card { max-width: 1100px; margin: 0 auto; border: 1.5px solid var(--rose-light); border-radius: 28px; padding: 48px 56px; background: linear-gradient(135deg, var(--blush-pale) 0%, var(--warm-white) 60%, var(--sage-pale) 100%); display: grid; grid-template-columns: 1fr auto; gap: 48px; align-items: center; }
+.audit-tag { display: inline-block; background: linear-gradient(135deg, var(--blush) 0%, var(--rose) 100%); color: white; font-size: 11px; letter-spacing: 0.15em; text-transform: uppercase; padding: 6px 16px; border-radius: 100px; margin-bottom: 14px; font-weight: 500; }
+.audit-card h3 { font-family: 'Playfair Display', serif; font-size: 26px; font-weight: 500; color: var(--dark); margin-bottom: 10px; }
+.audit-card p { font-size: 15px; color: var(--mid); line-height: 1.75; font-weight: 300; max-width: 520px; }
+.audit-cta-wrap { flex-shrink: 0; display: flex; flex-direction: column; align-items: center; gap: 10px; text-align: center; }
+.audit-price { font-family: 'Playfair Display', serif; font-size: 20px; color: var(--muted); text-decoration: line-through; }
+.audit-free { font-size: 12px; color: var(--rose); font-weight: 500; }
+.calculator-section { padding: 120px 80px; background: var(--cream); position: relative; }
+.calculator-wrap { max-width: 840px; margin: 0 auto; background: white; border-radius: 32px; border: 1px solid var(--border-light); overflow: hidden; box-shadow: 0 12px 60px rgba(44,36,32,0.06); }
+.calc-header { background: linear-gradient(160deg, #2C2420 0%, #3D3530 100%); padding: 44px 48px; position: relative; overflow: hidden; }
+.calc-header::after { content: ''; position: absolute; top: -40px; right: -40px; width: 200px; height: 200px; background: radial-gradient(circle, rgba(193,123,142,0.12) 0%, transparent 70%); }
+.calc-header h3 { font-family: 'Playfair Display', serif; font-size: 30px; font-weight: 400; color: white; margin-bottom: 8px; }
+.calc-header p { font-size: 15px; color: rgba(255,253,249,0.45); font-weight: 300; }
+.calc-body { padding: 44px 48px; }
+.calc-row { margin-bottom: 32px; }
+.calc-row label { display: block; font-size: 13px; font-weight: 500; color: var(--mid); margin-bottom: 12px; letter-spacing: 0.02em; }
+.calc-row label span { color: var(--muted); font-weight: 300; }
+.calc-slider-wrap { position: relative; padding-top: 8px; }
+.calc-slider { width: 100%; -webkit-appearance: none; appearance: none; height: 4px; border-radius: 2px; background: var(--border); outline: none; cursor: pointer; }
+.calc-slider::-webkit-slider-thumb { -webkit-appearance: none; width: 22px; height: 22px; border-radius: 50%; background: linear-gradient(135deg, var(--blush) 0%, var(--rose) 100%); cursor: pointer; box-shadow: 0 2px 10px rgba(193,123,142,0.4); transition: transform 0.2s; }
+.calc-slider::-webkit-slider-thumb:hover { transform: scale(1.15); }
+.calc-value { display: block; text-align: right; font-size: 14px; font-weight: 500; color: var(--dark); margin-bottom: 10px; }
+.calc-result { margin-top: 36px; background: var(--cream); border-radius: 24px; padding: 32px 36px; border: 1px solid var(--border-light); display: grid; grid-template-columns: 1fr 1fr; gap: 28px; }
+.calc-result-label { font-size: 11px; text-transform: uppercase; letter-spacing: 0.12em; color: var(--muted); margin-bottom: 6px; }
+.calc-result-value { font-family: 'Playfair Display', serif; font-size: 38px; font-weight: 500; color: var(--rose); line-height: 1; }
+.calc-result-value.neutral { color: var(--dark); }
+.calc-result-sub { font-size: 12.5px; color: var(--muted); margin-top: 4px; }
+.calc-cta-wrap { margin-top: 32px; text-align: center; }
+.calc-cta-note { font-size: 13px; color: var(--muted); margin-top: 12px; }
+.results-section { padding: 120px 80px; background: var(--warm-white); position: relative; }
+.results-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; max-width: 1100px; margin: 0 auto; }
+.result-card { background: var(--cream); border-radius: 24px; padding: 40px 32px; border: 1px solid var(--border-light); transition: all 0.4s cubic-bezier(0.25,0.46,0.45,0.94); position: relative; overflow: hidden; }
+.result-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, var(--sage-light), var(--rose-light), var(--gold-light)); opacity: 0; transition: opacity 0.4s; }
+.result-card:hover { transform: translateY(-6px); box-shadow: 0 16px 48px rgba(44,36,32,0.08); }
+.result-card:hover::before { opacity: 1; }
+.result-industry { display: inline-block; background: var(--sage-pale); color: var(--sage); font-size: 11px; letter-spacing: 0.15em; text-transform: uppercase; padding: 6px 16px; border-radius: 100px; margin-bottom: 20px; font-weight: 500; }
+.result-stat { font-family: 'Playfair Display', serif; font-size: 48px; font-weight: 500; color: var(--rose); line-height: 1; margin-bottom: 6px; }
+.result-stat-label { font-size: 13px; color: var(--mid); margin-bottom: 24px; }
+.result-divider { width: 32px; height: 2px; background: linear-gradient(90deg, var(--rose-light), var(--sage-light)); margin-bottom: 20px; border-radius: 1px; }
+.result-story { font-size: 14px; color: var(--mid); line-height: 1.75; }
+.result-story strong { color: var(--dark); font-weight: 500; }
+.qualifier-section { padding: 120px 80px; background: var(--cream); display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; position: relative; }
+.qualifier-left h2 { font-family: 'Playfair Display', serif; font-size: clamp(32px, 3.5vw, 46px); font-weight: 400; line-height: 1.15; color: var(--dark); margin-bottom: 16px; }
+.qualifier-left h2 em { font-style: italic; color: var(--rose); }
+.qualifier-left > p { font-size: 16px; color: var(--muted); line-height: 1.8; font-weight: 300; margin-bottom: 32px; }
+.qualifier-list { list-style: none; }
+.qualifier-item { display: flex; align-items: flex-start; gap: 16px; padding: 18px 0; border-bottom: 1px solid var(--border-light); }
+.qualifier-item:last-child { border-bottom: none; }
+.check { width: 28px; height: 28px; background: linear-gradient(135deg, var(--sage-pale), var(--blush-pale)); border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 1px; }
+.check svg { width: 12px; height: 12px; }
+.qualifier-item-text { font-size: 15px; color: var(--dark); line-height: 1.55; }
+.qualifier-item-text span { color: var(--muted); font-size: 13px; display: block; margin-top: 4px; font-weight: 300; }
+.qualifier-image { width: 100%; aspect-ratio: 4/5; object-fit: cover; object-position: top center; border-radius: 200px 200px 24px 24px; display: block; }
+.testimonial-section { background: linear-gradient(160deg, #2C2420 0%, #3D3530 100%); padding: 100px 80px; text-align: center; position: relative; overflow: hidden; }
+.testimonial-section::before { content: ''; position: absolute; top: -100px; left: 50%; transform: translateX(-50%); width: 500px; height: 500px; background: radial-gradient(circle, rgba(193,123,142,0.08) 0%, transparent 70%); pointer-events: none; }
+.testimonial-quote-mark { font-family: 'Playfair Display', serif; font-size: 120px; color: rgba(193,123,142,0.15); line-height: 1; margin-bottom: -40px; display: block; }
+.testimonial-section blockquote { font-family: 'Playfair Display', serif; font-size: clamp(22px, 2.6vw, 34px); font-weight: 400; font-style: italic; color: rgba(255,253,249,0.85); max-width: 760px; margin: 0 auto 28px; line-height: 1.55; position: relative; }
+.testimonial-section blockquote em { color: var(--rose-light); font-style: normal; }
+.testimonial-attr { font-size: 14px; color: rgba(255,253,249,0.35); letter-spacing: 0.04em; }
+.testimonial-attr strong { color: rgba(255,253,249,0.6); }
+.cta-section { padding: 140px 80px; background: var(--cream); text-align: center; position: relative; overflow: hidden; }
+.cta-section::before { content: ''; position: absolute; top: -200px; left: 50%; transform: translateX(-50%); width: 700px; height: 700px; background: radial-gradient(circle, rgba(193,123,142,0.06) 0%, rgba(143,166,142,0.04) 50%, transparent 70%); pointer-events: none; }
+.cta-section h2 { font-family: 'Playfair Display', serif; font-size: clamp(36px, 4.5vw, 58px); font-weight: 400; color: var(--dark); line-height: 1.12; margin-bottom: 20px; position: relative; }
+.cta-section h2 em { font-style: italic; color: var(--rose); }
+.cta-section p { font-size: 17px; color: var(--muted); max-width: 500px; margin: 0 auto 44px; font-weight: 300; line-height: 1.8; position: relative; }
+.cta-note { font-size: 13px; color: var(--muted); margin-top: 20px; display: block; }
+footer { background: linear-gradient(160deg, #2C2420 0%, #3D3530 100%); padding: 44px 80px; display: flex; justify-content: space-between; align-items: center; border-top: 1px solid rgba(255,253,249,0.05); }
+.footer-logo { font-family: 'Playfair Display', serif; font-size: 20px; color: rgba(255,253,249,0.7); }
+.footer-logo span { color: var(--rose-light); font-style: italic; }
+.footer-links { display: flex; gap: 28px; list-style: none; }
+.footer-links li a { text-decoration: none; font-size: 13px; color: rgba(255,253,249,0.3); transition: color 0.3s; }
+.footer-links li a:hover { color: rgba(255,253,249,0.6); }
+.footer-copy { font-size: 12px; color: rgba(255,253,249,0.18); }
+@media (max-width: 768px) {
+  nav { padding: 16px 24px; }
+  nav.scrolled { padding: 12px 24px; }
+  nav ul { display: none; }
+  .hamburger { display: flex; }
+  .hero { grid-template-columns: 1fr; min-height: auto; }
+  .hero-text { padding: 72px 24px 48px; order: 1; }
+  .hero h1 { font-size: 34px; }
+  .hero-sub { font-size: 15.5px; }
+  .hero-image { order: 0; height: 420px; }
+  .hero-image img { object-position: center 15%; }
+  .hero-badge { left: 20px; bottom: 20px; }
+  .hero-cta-group { flex-direction: column; align-items: flex-start; width: 100%; }
+  .btn-primary { width: 100%; justify-content: center; }
+  .hero-social-proof { margin-top: 32px; }
+  .trust-bar { padding: 20px 24px; flex-direction: column; gap: 14px; align-items: flex-start; }
+  .trust-clients { flex-direction: column; gap: 8px; }
+  .problem-section { grid-template-columns: 1fr; padding: 72px 24px; gap: 44px; }
+  .problem-left h2 { font-size: 28px; }
+  .bridge-line p { font-size: 18px; }
+  .about-section { grid-template-columns: 1fr; padding: 72px 24px; gap: 48px; }
+  .about-image-wrap img { aspect-ratio: 3/4; border-radius: 120px 120px 20px 20px; }
+  .about-badge-wrap { right: 0; bottom: -16px; }
+  .about-text h2 { font-size: 28px; }
+  .services-section { padding: 72px 24px; }
+  .services-grid { grid-template-columns: 1fr; gap: 18px; }
+  .service-card { padding: 32px 24px; border-radius: 20px; }
+  .audit-card { grid-template-columns: 1fr; padding: 30px 24px; gap: 28px; border-radius: 20px; }
+  .audit-cta-wrap { align-items: flex-start; }
+  .calculator-section { padding: 72px 24px; }
+  .calc-header { padding: 30px 24px; }
+  .calc-header h3 { font-size: 26px; }
+  .calc-body { padding: 30px 24px; }
+  .calc-result { grid-template-columns: 1fr 1fr; gap: 20px; padding: 24px; border-radius: 16px; }
+  .calc-result-value { font-size: 28px; }
+  .results-section { padding: 72px 24px; }
+  .results-grid { grid-template-columns: 1fr; gap: 18px; }
+  .qualifier-section { grid-template-columns: 1fr; padding: 72px 24px; gap: 44px; }
+  .qualifier-left h2 { font-size: 28px; }
+  .qualifier-image { aspect-ratio: 3/4; border-radius: 120px 120px 20px 20px; }
+  .testimonial-section { padding: 72px 24px; }
+  .testimonial-section blockquote { font-size: 20px; }
+  .testimonial-quote-mark { font-size: 80px; margin-bottom: -24px; }
+  .cta-section { padding: 80px 24px; }
+  .cta-section h2 { font-size: 32px; }
+  .cta-section p { font-size: 15.5px; }
+  footer { flex-direction: column; gap: 24px; padding: 36px 24px; text-align: center; }
+  .footer-links { gap: 20px; flex-wrap: wrap; justify-content: center; }
+  .section-header { margin-bottom: 44px; }
+  .section-header h2 { font-size: 28px; }
+}
+@media (max-width: 400px) {
+  .hero h1 { font-size: 30px; }
+  .calc-result { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+<nav>
+  <div class="nav-logo">Tania <span>Glavey</span></div>
+  <ul>
+    <li><a href="#work">Work</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#cta" class="nav-cta">Book a Call</a></li>
+  </ul>
+  <div class="hamburger" onclick="toggleMobileNav()"><span></span><span></span><span></span></div>
+</nav>
+<div class="mobile-nav" id="mobileNav">
+  <a href="#work" onclick="toggleMobileNav()">Work</a>
+  <a href="#about" onclick="toggleMobileNav()">About</a>
+  <a href="#services" onclick="toggleMobileNav()">Services</a>
+  <a href="#cta" onclick="toggleMobileNav()">Book a Call</a>
+</div>
+<section class="hero">
+  <div class="hero-text">
+    <div class="tag-line">Marketing Systems for Wellness Educators</div>
+    <h1>Finally. Marketing That <em>Matches the Quality</em> of Your Program.</h1>
+    <p class="hero-sub">Your breathwork school, yoga training, or wellness certification is genuinely transformative. The problem isn't your program. It's that your marketing doesn't show that yet. I build the systems that change it.</p>
+    <div class="hero-cta-group">
+      <a href="#cta" class="btn-primary"><span>Book a Free Strategy Call</span></a>
+      <a href="#work" class="btn-ghost">See my work &#8595;</a>
+    </div>
+    <div class="hero-social-proof">
+      <div class="proof-avatars"><span>YH</span><span>AB</span><span>BB</span></div>
+      <div class="proof-text">
+        <strong>Trusted by wellness educators worldwide</strong>
+        Yoga studios, breathwork schools &amp; certification programs
+      </div>
+    </div>
+  </div>
+  <div class="hero-image">
+    <img src="https://assets.cdn.filesafe.space/ge8ygqy8H64kYgymhKZ3/media/699a531c08245ef8127b3fcf.jpg" alt="Tania Glavey, Marketing Strategist" />
+    <div class="hero-badge">
+      <div class="badge-stat">7+</div>
+      <div class="badge-label">Years inside the wellness industry's marketing engine</div>
+    </div>
+  </div>
+</section>
+<div class="trust-bar">
+  <span class="trust-label">Clients include</span>
+  <div class="trust-clients">
+    <span class="client-name">Alchemy of Breath</span>
+    <span class="client-name">YogaHub Ireland</span>
+    <span class="client-name">Biodynamic Breathwork Institute</span>
+    <span class="client-name">+ more</span>
+  </div>
+</div>
+<section class="problem-section">
+  <div class="problem-left reveal">
+    <div class="label">The Gap Nobody Talks About</div>
+    <h2 style="margin-top:16px">You didn't build an <em>extraordinary</em> program to become a full-time marketer.</h2>
+    <p>You've got students getting real results. Testimonials that move people. A reputation built entirely on word of mouth. And yet every new cohort still feels like starting from scratch.</p>
+    <p>The emails go to spam. The ads burn money. The launches are exhausting. And the gap between how good your program actually is and how it looks online keeps you up at night.</p>
+    <p>That gap is exactly what I close.</p>
+    <div class="bridge-line">
+      <p>"You don't need more marketing hustle. You need a system that runs like the professional program you've already built."</p>
+    </div>
+  </div>
+  <div class="reveal reveal-delay-2">
+    <div class="pain-card">
+      <div class="pain-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#C17B8E" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/><line x1="9" y1="14" x2="6" y2="17" stroke="#E4A8B8"/><line x1="15" y1="14" x2="18" y2="17" stroke="#E4A8B8"/></svg></div>
+      <div><h4>Your emails are going to spam and you don't know why</h4><p>Poor sender reputation, missing domain authentication (SPF, DKIM, DMARC), and spam trigger words are silently killing your open rates before a single student sees your launch sequence.</p></div>
+    </div>
+    <div class="pain-card">
+      <div class="pain-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#C17B8E" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div>
+      <div><h4>Cohort enrollment spikes and crashes with no consistency</h4><p>Every launch feels like the first one. Without an automated nurture system you're rebuilding momentum from zero each time a new cohort opens.</p></div>
+    </div>
+    <div class="pain-card">
+      <div class="pain-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#C17B8E" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
+      <div><h4>Launch exhaustion is quietly becoming your new normal</h4><p>When your entire launch lives in your head and your inbox, you're not just the founder. You're the whole marketing department. That is not sustainable at scale.</p></div>
+    </div>
+    <div class="pain-card">
+      <div class="pain-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#C17B8E" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2"/><line x1="12" y1="12" x2="12" y2="16"/><line x1="10" y1="14" x2="14" y2="14"/></svg></div>
+      <div><h4>Meta and Google ads drain budget without filling seats</h4><p>Running ads to a leaky funnel just accelerates the bleed. The problem is usually not the ad itself. It's everything that happens the moment after the click.</p></div>
+    </div>
+    <div class="pain-card">
+      <div class="pain-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#C17B8E" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg></div>
+      <div><h4>You're reaching everyone and converting almost no one</h4><p>Wellness buyers are thoughtful. They research deeply. They need to trust you before investing in a certification program. A generic funnel quietly repels your best prospects.</p></div>
+    </div>
+  </div>
+</section>
+<section class="about-section" id="about">
+  <div class="about-image-wrap reveal">
+    <img src="https://assets.cdn.filesafe.space/ge8ygqy8H64kYgymhKZ3/media/699a509455d8bcb3b51157c2.jpg" alt="Tania Glavey" />
+    <div class="about-badge-wrap"><div class="stat">50+</div><div class="stat-label">Cohort launches<br>managed end-to-end</div></div>
+  </div>
+  <div class="about-text reveal reveal-delay-2">
+    <div class="label">About Tania</div>
+    <h2 style="margin-top:16px">I've spent years <em>inside</em> the wellness industry's marketing engine.</h2>
+    <p>I'm not a generalist agency that took on a yoga client once. I've been embedded in breathwork schools, yoga studio chains, and somatic certification programs long enough to understand what makes marketing this industry genuinely different.</p>
+    <p>Wellness buyers are thoughtful, values-driven, and deeply skeptical of anything that feels pushy. The playbook that works for e-commerce or SaaS will quietly repel your best prospects. You need strategy that respects your brand and still converts.</p>
+    <p>I specialize in building the complete marketing architecture: paid advertising that attracts the right students, automation that nurtures them over weeks and months, and launch systems that fill cohorts without burning out the founder behind them.</p>
+    <div class="expertise-pills">
+      <span class="pill accent">Meta &amp; Google Ads</span>
+      <span class="pill accent">GoHighLevel Automation</span>
+      <span class="pill accent">Cohort Launch Systems</span>
+      <span class="pill">Email Deliverability</span>
+      <span class="pill">Conversion Copywriting</span>
+      <span class="pill">CRM Architecture</span>
+      <span class="pill">Sales Funnel Build-Out</span>
+      <span class="pill">Fractional CMO</span>
+    </div>
+  </div>
+</section>
+<section class="services-section" id="services">
+  <div class="section-header reveal">
+    <div class="tag-line">How We Work Together</div>
+    <h2>Three ways to build your <em>enrollment machine</em></h2>
+    <p>Depending on where you are and what you need, we work together in the way that fits your business right now.</p>
+  </div>
+  <div class="services-grid">
+    <div class="service-card featured reveal">
+      <div class="service-number">01</div>
+      <h3>Fractional CMO Partnership</h3>
+      <p class="service-tagline">For founders ready to hand over the marketing wheel entirely</p>
+      <p class="service-desc">I become your marketing department. Not just execution but strategic ownership. I set the direction, manage the campaigns, build the automations, and show up as your senior marketing brain every single month.</p>
+      <ul class="service-includes">
+        <li>Full paid advertising management (Meta + Google)</li>
+        <li>GoHighLevel CRM build-out &amp; automation</li>
+        <li>Email marketing strategy &amp; deliverability</li>
+        <li>Cohort launch planning &amp; execution</li>
+        <li>Landing page &amp; funnel optimization</li>
+        <li>Monthly strategy sessions + reporting</li>
+      </ul>
+      <a href="#cta" class="service-cta">Let's see if we're a fit &#8594;</a>
+    </div>
+    <div class="service-card reveal reveal-delay-2">
+      <div class="service-number">02</div>
+      <h3>Cohort Launch System Build</h3>
+      <p class="service-tagline">For founders who want the machine built so their team can run it</p>
+      <p class="service-desc">Over a defined engagement we build your complete launch infrastructure. Ads, automation, email sequences, landing pages, fully documented and handed over so your team can run the next launch without you.</p>
+      <ul class="service-includes">
+        <li>Complete GHL funnel &amp; automation setup</li>
+        <li>Meta/Google ad campaigns + creative strategy</li>
+        <li>Pre-launch &amp; launch email sequences</li>
+        <li>Conversion-optimized landing pages</li>
+        <li>Email deliverability audit &amp; repair</li>
+        <li>Full handover with team training</li>
+      </ul>
+      <a href="#cta" class="service-cta">Let's see if we're a fit &#8594;</a>
+    </div>
+  </div>
+  <div class="audit-card reveal">
+    <div>
+      <span class="audit-tag">Free Offer</span>
+      <h3>Not sure where to start? Begin with an audit.</h3>
+      <p>I'll review your current funnel, ad accounts, email deliverability, and launch sequence and show you exactly where enrollment is slipping through the cracks. No pitch, no pressure. Just a clear, honest diagnosis of what's holding your next cohort back.</p>
+    </div>
+    <div class="audit-cta-wrap">
+      <div class="audit-price">$497 value</div>
+      <a href="#cta" class="btn-primary"><span>Claim Your Free Audit</span></a>
+      <div class="audit-free">Complimentary for qualifying programs</div>
+    </div>
+  </div>
+</section>
+<section class="calculator-section">
+  <div class="section-header reveal">
+    <div class="tag-line">Revenue Leakage Calculator</div>
+    <h2>See how much an <em>unfilled cohort</em> is actually costing you</h2>
+    <p>Most founders underestimate the real cost of empty seats. This isn't just lost revenue. It compounds with every launch cycle that goes by.</p>
+  </div>
+  <div class="calculator-wrap reveal">
+    <div class="calc-header">
+      <h3>Your Enrollment Gap Calculator</h3>
+      <p>Adjust the sliders to reflect your program. Numbers update in real time.</p>
+    </div>
+    <div class="calc-body">
+      <div class="calc-row"><label>Program price per student <span>(USD)</span></label><span class="calc-value" id="priceVal">$2,500</span><div class="calc-slider-wrap"><input type="range" class="calc-slider" id="price" min="500" max="10000" step="100" value="2500" oninput="updateCalc()"></div></div>
+      <div class="calc-row"><label>Total cohort capacity <span>(seats per cohort)</span></label><span class="calc-value" id="seatsVal">20 seats</span><div class="calc-slider-wrap"><input type="range" class="calc-slider" id="seats" min="5" max="200" step="5" value="20" oninput="updateCalc()"></div></div>
+      <div class="calc-row"><label>Current fill rate <span>(% of seats typically filled)</span></label><span class="calc-value" id="fillVal">60%</span><div class="calc-slider-wrap"><input type="range" class="calc-slider" id="fill" min="10" max="95" step="5" value="60" oninput="updateCalc()"></div></div>
+      <div class="calc-row"><label>Cohorts per year</label><span class="calc-value" id="cohortsVal">2 per year</span><div class="calc-slider-wrap"><input type="range" class="calc-slider" id="cohorts" min="1" max="12" step="1" value="2" oninput="updateCalc()"></div></div>
+      <div class="calc-result">
+        <div><div class="calc-result-label">Revenue you're earning now</div><div class="calc-result-value neutral" id="currentRev">$60,000</div><div class="calc-result-sub">per year at current fill rate</div></div>
+        <div><div class="calc-result-label">Revenue left on the table</div><div class="calc-result-value" id="leakRev">$40,000</div><div class="calc-result-sub">from unfilled seats annually</div></div>
+        <div><div class="calc-result-label">At full capacity you'd earn</div><div class="calc-result-value neutral" id="fullRev">$100,000</div><div class="calc-result-sub">per year with the same program</div></div>
+        <div><div class="calc-result-label">5-year opportunity cost</div><div class="calc-result-value" id="fiveYear">$200,000</div><div class="calc-result-sub">if nothing changes starting today</div></div>
+      </div>
+      <div class="calc-cta-wrap"><a href="#cta" class="btn-primary"><span>Let's close that gap. Book a free call.</span></a><p class="calc-cta-note">These numbers are conservative. Most programs we work with close significantly more than this gap within two launch cycles.</p></div>
+    </div>
+  </div>
+</section>
+<section class="results-section" id="work">
+  <div class="section-header reveal">
+    <div class="tag-line">Real Outcomes</div>
+    <h2>What actually happens when the <em>system works</em></h2>
+    <p>A few snapshots from programs we've built enrollment systems for.</p>
+  </div>
+  <div class="results-grid">
+    <div class="result-card reveal"><span class="result-industry">Breathwork Certification</span><div class="result-stat">Sold out</div><div class="result-stat-label">In 11 days from cold traffic</div><div class="result-divider"></div><p class="result-story">A facilitator training program was filling 40% of capacity through word of mouth alone. <strong>We rebuilt their Meta ad system, integrated GHL automation, and launched a 12-email nurture sequence.</strong> Their next cohort sold out in under two weeks with a 60-day waitlist forming immediately after.</p></div>
+    <div class="result-card reveal reveal-delay-1"><span class="result-industry">Yoga Teacher Training</span><div class="result-stat">3.4x</div><div class="result-stat-label">Return on ad spend across 3 cohorts</div><div class="result-divider"></div><p class="result-story">A studio chain with 8 locations was running disconnected ads with no retargeting or nurture in place. <strong>We unified the funnel, repaired email deliverability, and built audience warming campaigns.</strong> ROAS improved by 240% within the first two launches.</p></div>
+    <div class="result-card reveal reveal-delay-2"><span class="result-industry">Somatic Certification School</span><div class="result-stat">$0</div><div class="result-stat-label">Founder time spent on launch week</div><div class="result-divider"></div><p class="result-story">The founder was spending 3 to 4 weeks personally managing every launch. <strong>We built a fully automated enrollment system in GoHighLevel.</strong> Their most recent launch ran while the founder was leading a retreat in Portugal. It handled itself completely.</p></div>
+  </div>
+</section>
+<section class="qualifier-section">
+  <div class="qualifier-left reveal">
+    <div class="label">Is This You?</div>
+    <h2 style="margin-top:16px">We're probably a <em>great fit</em> if...</h2>
+    <p>I work best with wellness founders who've proven their program works and are ready to stop leaving enrollment on the table.</p>
+    <ul class="qualifier-list">
+      <li class="qualifier-item"><div class="check"><svg viewBox="0 0 12 12" fill="none" stroke="#8FA68E" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="1.5 6 4.5 9 10.5 3"/></svg></div><div class="qualifier-item-text">You run a yoga teacher training, breathwork certification, or wellness education program<span>A cohort or training program with real transformation outcomes, not a product business</span></div></li>
+      <li class="qualifier-item"><div class="check"><svg viewBox="0 0 12 12" fill="none" stroke="#8FA68E" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="1.5 6 4.5 9 10.5 3"/></svg></div><div class="qualifier-item-text">Your students are getting results but enrollment is still inconsistent<span>You know your program works. The marketing just doesn't reflect that yet.</span></div></li>
+      <li class="qualifier-item"><div class="check"><svg viewBox="0 0 12 12" fill="none" stroke="#8FA68E" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="1.5 6 4.5 9 10.5 3"/></svg></div><div class="qualifier-item-text">You're doing $100k to $1M and know you should be doing significantly more<span>The ceiling you're hitting is a marketing infrastructure problem, not a program quality problem</span></div></li>
+      <li class="qualifier-item"><div class="check"><svg viewBox="0 0 12 12" fill="none" stroke="#8FA68E" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="1.5 6 4.5 9 10.5 3"/></svg></div><div class="qualifier-item-text">You want a real marketing partner who takes ownership, not someone who waits for direction<span>I work best with founders who want to hand it over and focus on what only they can do</span></div></li>
+      <li class="qualifier-item"><div class="check"><svg viewBox="0 0 12 12" fill="none" stroke="#8FA68E" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="1.5 6 4.5 9 10.5 3"/></svg></div><div class="qualifier-item-text">Authentic marketing that doesn't compromise your brand matters deeply to you<span>Enrolling students without ever feeling pushy is a craft. It's what I do every day in this world.</span></div></li>
+    </ul>
+  </div>
+  <div class="reveal reveal-delay-2"><img class="qualifier-image" src="https://assets.cdn.filesafe.space/ge8ygqy8H64kYgymhKZ3/media/699a543bdf9bdff9a6d45209.jpeg" alt="Tania Glavey" /></div>
+</section>
+<section class="testimonial-section">
+  <span class="testimonial-quote-mark reveal">"</span>
+  <blockquote class="reveal reveal-delay-1">"Working with Tania felt like she had been part of our school for years. She understood our community, spoke our language, and built something that genuinely felt like <em>us.</em> Our last cohort was the biggest we had ever run."</blockquote>
+  <p class="testimonial-attr reveal reveal-delay-2"><strong>[Client Name]</strong> &nbsp;&middot;&nbsp; Founder, [Breathwork School]</p>
+</section>
+<section class="cta-section" id="cta">
+  <div class="tag-line reveal">Free 30-Minute Call</div>
+  <h2 style="margin-top:20px" class="reveal reveal-delay-1">Let's find out where your<br>enrollment is <em>leaking.</em></h2>
+  <p class="reveal reveal-delay-2">Book a free Marketing Architecture Call. I'll look at your current funnel, ads, and launch approach and tell you exactly where the gaps are. Whether we work together or not.</p>
+  <a href="#" class="btn-primary reveal reveal-delay-3" style="font-size:16px; padding: 18px 44px;"><span>Book My Free Call</span></a>
+  <span class="cta-note reveal reveal-delay-4">No pitch deck. No pressure. Just a clear picture of what's holding your next cohort back.</span>
+</section>
+<footer>
+  <div class="footer-logo">Tania <span>Glavey</span></div>
+  <ul class="footer-links"><li><a href="#work">Work</a></li><li><a href="#about">About</a></li><li><a href="#services">Services</a></li><li><a href="#">Privacy</a></li></ul>
+  <span class="footer-copy">&copy; 2025 Tania Glavey</span>
+</footer>
+<script>
+function fmt(n){return '$'+Math.round(n).toLocaleString();}
+function updateCalc(){
+  var price=+document.getElementById('price').value,seats=+document.getElementById('seats').value,fill=+document.getElementById('fill').value,cohorts=+document.getElementById('cohorts').value;
+  document.getElementById('priceVal').textContent='$'+price.toLocaleString();
+  document.getElementById('seatsVal').textContent=seats+' seats';
+  document.getElementById('fillVal').textContent=fill+'%';
+  document.getElementById('cohortsVal').textContent=cohorts+' per year';
+  var fullRev=price*seats*cohorts,currentRev=fullRev*(fill/100),leakRev=fullRev-currentRev,fiveYear=leakRev*5;
+  document.getElementById('fullRev').textContent=fmt(fullRev);
+  document.getElementById('currentRev').textContent=fmt(currentRev);
+  document.getElementById('leakRev').textContent=fmt(leakRev);
+  document.getElementById('fiveYear').textContent=fmt(fiveYear);
+}
+updateCalc();
+function toggleMobileNav(){
+  document.getElementById('mobileNav').classList.toggle('open');
+  document.querySelector('.hamburger').classList.toggle('active');
+  document.body.style.overflow=document.getElementById('mobileNav').classList.contains('open')?'hidden':'';
+}
+window.addEventListener('scroll',function(){
+  var nav=document.querySelector('nav');
+  if(window.scrollY>60){nav.classList.add('scrolled');}else{nav.classList.remove('scrolled');}
+});
+var revealObserver=new IntersectionObserver(function(entries){
+  entries.forEach(function(entry){if(entry.isIntersecting){entry.target.classList.add('visible');}});
+},{threshold:0.12,rootMargin:'0px 0px -40px 0px'});
+document.querySelectorAll('.reveal').forEach(function(el){revealObserver.observe(el);});
+</script>
+</body>
+</html>
